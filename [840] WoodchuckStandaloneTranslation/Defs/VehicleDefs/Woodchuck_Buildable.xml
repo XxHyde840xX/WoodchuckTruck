@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<Defs>
+	<Vehicles.VehicleBuildDef ParentName="VehicleBaseBuildable">
+		<defName>840Woodchuck_Blueprint</defName>
+		<label>Woodchuck</label>
+		<description>No juice left in those e-vehicle batteries? Chemfuel woes got you down? Or maybe the plan just backfired and you had to take the scenic route. Not to worry, because the Woodchuck isn't worried either. This classic long-bed pickup truck has been modified with a state-of-the-art combustion device, which can be powered using one of natures most abundant resources; WOOD! The only catch is that the Woodchuck requires two drivers; one to operate the vehicle itself, and one to stoke the combustion device. Thanks to advanced design techniques, the vehicle produces a negligible ammount of exhaust, though this hardly classifies the Woodchuck as "eco-friendly." Better hope you brought that axe or chainsaw with you! You're gonna need it. \n\n&lt;color=#bb8f04&gt;Crew:&lt;/color&gt; Driver x2, Passenger x1\n&lt;color=#bb8f04&gt;Power:&lt;/color&gt; Wood Logs</description>
+		<designationCategory>VF_Vehicles</designationCategory>
+		<graphicData>
+			<texPath>Things/Vehicles/Endeavour/Endeavour</texPath>
+			<graphicClass>Graphic_Multi</graphicClass>
+			<drawSize>(3,6)</drawSize>
+		</graphicData>
+		
+		<statBases>
+			<MaxHitPoints>500</MaxHitPoints>
+			<WorkToBuild>8125</WorkToBuild>
+			<Flammability>0.08</Flammability>
+		</statBases>
+		
+		<size>(2,5)</size>
+		
+		<researchPrerequisites>
+			<li>VVE_BasicVehicles</li>
+		</researchPrerequisites>
+		
+		<costList>
+			<VVE_EngineBlock>1</VVE_EngineBlock>
+			<VVE_CarAlternator>1</VVE_CarAlternator>
+			<VVE_CarExhaust>2</VVE_CarExhaust>
+			<VVE_CarSuspension>8</VVE_CarSuspension>
+			<VVE_CarWheel>6</VVE_CarWheel>
+			<Steel>315</Steel>
+			<ComponentIndustrial>7</ComponentIndustrial>
+		</costList>
+		
+		<soundImpactDefault>BulletImpact_Metal</soundImpactDefault>
+		
+		<thingToSpawn>840Woodchuck</thingToSpawn>
+		
+		<constructionSkillPrerequisite>7</constructionSkillPrerequisite>
+	</Vehicles.VehicleBuildDef>
+</Defs>

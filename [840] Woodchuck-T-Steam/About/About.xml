@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<ModMetaData>
+
+	<name>The Woodchuck - Long-Box Pickup -Translation</name>
+	<author>XxHyde840xX</author>
+	<url></url>
+	<supportedVersions>
+		<li>1.4</li>
+	</supportedVersions>
+	<packageId>840.t.endeavour</packageId>
+	<modDependencies>
+	</modDependencies>
+	<loadAfter>
+		<li>endeavour</li>
+	</loadAfter>
+	<description>Chinese to English translation of @RedFox_2020's "Woodchuck" Long-Box Pickup. I apologize for any mistranslations as I do not speak Chinese. 
+Big thanks to the original author for allowing me to do a translation for their awesome mod. I hope you guys enjoy their mod as much as I have.
+		
+If the original author wishes at any time for me to remove this from the workshop, I will comply with their request to do so.
+
+=================================
+
+KNOWN ISSUES:
+
+- NONE!
+
+=================================
+
+If there are any other issues, please don't hesitate to let me know.
+
+o7 - XxHyde840xX
+
+=================================</description>
+
+</ModMetaData>

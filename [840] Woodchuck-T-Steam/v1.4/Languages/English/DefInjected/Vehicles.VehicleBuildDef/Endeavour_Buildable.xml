@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LanguageData>
+
+	<!-- EN: Woodchuck Blueprint Translation -->
+		<Endeavour_Blueprint.label>Woodchuck</Endeavour_Blueprint.label>
+		<Endeavour_Blueprint.description>No juice left in those e-vehicle batteries? Chemfuel woes got you down? Or maybe the plan just backfired and you had to take the scenic route. Not to worry, because the Woodchuck isn't worried either. This classic long-bed pickup truck has been modified with a state-of-the-art combustion device, which can be powered using one of natures most abundant resources; WOOD! The only catch is that the Woodchuck requires two drivers; one to operate the vehicle itself, and one to stoke the combustion device. Thanks to advanced design techniques, the vehicle produces a negligible ammount of exhaust, though this hardly classifies the Woodchuck as "eco-friendly." Better hope you brought that axe or chainsaw with you! You're gonna need it. \n\n&lt;color=#bb8f04&gt;Crew:&lt;/color&gt; Driver x2, Passenger x1\n&lt;color=#bb8f04&gt;Power:&lt;/color&gt; Wood Logs</Endeavour.description>
+	
+</LanguageData>	

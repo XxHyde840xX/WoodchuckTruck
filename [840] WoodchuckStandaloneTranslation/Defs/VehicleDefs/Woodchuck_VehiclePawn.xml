@@ -1,0 +1,402 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<Defs>	
+	<Vehicles.VehicleDef ParentName="VehiclePawn_Mechanical">
+		<defName>840Woodchuck</defName>
+		<label>Woodchuck</label>
+		<description>No juice left in those e-vehicle batteries? Chemfuel woes got you down? Or maybe the plan just backfired and you had to take the scenic route. Not to worry, because the Woodchuck isn't worried either. This classic long-bed pickup truck has been modified with a state-of-the-art combustion device, which can be powered using one of natures most abundant resources; WOOD! The only catch is that the Woodchuck requires two drivers; one to operate the vehicle itself, and one to stoke the combustion device. Thanks to advanced design techniques, the vehicle produces a negligible ammount of exhaust, though this hardly classifies the Woodchuck as "eco-friendly." Better hope you brought that axe or chainsaw with you! You're gonna need it. \n\n&lt;color=#bb8f04&gt;Crew:&lt;/color&gt; Driver x2, Passenger x1\n&lt;color=#bb8f04&gt;Power:&lt;/color&gt; Wood Logs</description>
+		
+		<graphicData>
+			<texPath>Things/Vehicles/Endeavour/Endeavour</texPath>
+			<graphicClass>Vehicles.Graphic_Vehicle</graphicClass>
+			<shaderType>CutoutComplexPattern</shaderType>
+			<drawSize>(3,6)</drawSize>
+			<color>(160, 160, 160)</color>
+			<colorTwo>(126, 126, 126)</colorTwo>
+			<colorThree>(196, 200, 202)</colorThree>
+		</graphicData>
+		
+		<fillPercent>0.8</fillPercent>
+		
+		<buildDef>840Woodchuck_Blueprint</buildDef>
+		
+		<size>(2,5)</size>
+		
+		<vehicleMovementPermissions>DriverNeeded</vehicleMovementPermissions>
+		<vehicleCategory>Transport</vehicleCategory>
+		<techLevel>Industrial</techLevel>
+		<vehicleType>Land</vehicleType>
+		
+		<statBases>
+			<ArmorRating_Blunt>0.22</ArmorRating_Blunt>
+			<ArmorRating_Sharp>0.38</ArmorRating_Sharp>
+			<ArmorRating_Heat>1.0</ArmorRating_Heat>
+			<Flammability>0.5</Flammability>
+			<MarketValue>1855</MarketValue>
+		</statBases>
+		
+		<vehicleStats>
+			<Mass>270</Mass>
+			<MoveSpeed>7.75</MoveSpeed>
+			<CargoCapacity>645</CargoCapacity>
+			<RepairRate>0.72</RepairRate>
+			<AccelerationRate>0.016</AccelerationRate>
+		</vehicleStats>
+		
+		<soundSustainersOnEvent>
+			<li>
+				<key>(IgnitionOn, IgnitionOff)</key>
+				<value>VVE_VehicleEngineCar</value>
+			</li>
+		</soundSustainersOnEvent>
+		
+		<race>
+			<baseBodySize>3.5</baseBodySize>
+		</race>
+		
+		<properties>
+			<winterSpeedMultiplier>3.25</winterSpeedMultiplier>
+			
+			<customRoadCosts AssignDefaults = "0.25"/>
+			
+			<roles>
+				<li>
+					<key>driver</key>
+					<label>Driver</label>
+					<slots>1</slots>
+					<slotsToOperate>1</slotsToOperate>
+					
+					<handlingTypes>
+						<li>Movement</li>
+					</handlingTypes>
+					
+					<hitbox>
+						<side>Front</side>
+					</hitbox>
+				</li>
+				<li>
+					<key>passenger_shotgun</key>
+					<label>Shotgun</label>
+					<slots>1</slots>
+					
+					<hitbox>
+						<side>Front</side>
+					</hitbox>
+
+					<pawnRenderer>
+						<layerNorth>2</layerNorth>
+						<layerSouth>2</layerSouth>
+						<layerEast>2</layerEast>
+						
+						<angleNorthEast>0</angleNorthEast>
+						<angleSouthEast>0</angleSouthEast>
+						<northEast>East</northEast>
+						<southEast>East</southEast>
+						<southWest>West</southWest>
+						<northWest>West</northWest>
+						
+						<drawOffsetNorth>(0.4, 0, 0.25)</drawOffsetNorth>
+						<drawOffsetSouth>(-0.3, 0, 0.7)</drawOffsetSouth>
+						<drawOffsetEast>(-0.4, 0, 0.4)</drawOffsetEast>
+					</pawnRenderer>
+				</li>
+				<li>
+					<key>passenger_rear</key>
+					<label>Rear Passenger</label>
+					<slots>1</slots>
+					
+					<hitbox>
+						<cells>
+							<li>(0, 1)</li>
+							<li>(1, 1)</li>
+							<li>(0, 0)</li>
+							<li>(1, 0)</li>
+						</cells>
+					</hitbox>
+				</li>
+			</roles>
+		</properties>
+		
+		<components>
+			<li>
+				<key>Engine</key>
+				<label>Engine</label>
+				<health>65</health>
+				<priorityStatEfficiency>true</priorityStatEfficiency>
+				<depth>External</depth>
+				
+				<reactors>
+					<li Class = "Vehicles.Reactor_Explosive">
+						<indicator>VF_Explosive</indicator>
+						<chance>0.25</chance>
+						<radius>3</radius>
+						<damageDef>Bomb</damageDef>
+					</li>
+					<li Class = "Vehicles.Reactor_FuelLeak"/>
+				</reactors>
+				
+				<hitbox>
+					<side>Back</side>
+				</hitbox>
+				
+				<categories>
+					<li>MoveSpeed</li>
+				</categories>
+			</li>
+			<li>
+				<key>FrontLeftWheel</key>
+				<label>Front Left Wheel</label>
+				<health>30</health>
+				<depth>External</depth>
+				
+				<armor>
+					<ArmorRating_Blunt>0</ArmorRating_Blunt>
+					<ArmorRating_Sharp>0</ArmorRating_Sharp>
+				</armor>
+				
+				<tags>
+					<li>Wheel</li>
+				</tags>
+				
+				<hitbox>
+					<fallthrough>false</fallthrough>
+					<cells>
+						<li>(0, 2)</li>
+					</cells>
+				</hitbox>
+				
+				<categories>
+					<li>MoveSpeed</li>
+				</categories>
+			</li>
+			<li>
+				<key>FrontRightWheel</key>
+				<label>Front Right Wheel</label>
+				<health>30</health>
+				<depth>External</depth>
+				
+				<armor>
+					<ArmorRating_Blunt>0</ArmorRating_Blunt>
+					<ArmorRating_Sharp>0</ArmorRating_Sharp>
+				</armor>
+				
+				<tags>
+					<li>Wheel</li>
+				</tags>
+				
+				<categories>
+					<li>MoveSpeed</li>
+				</categories>
+				
+				<hitbox>
+					<fallthrough>false</fallthrough>
+					<cells>
+						<li>(1, 2)</li>
+					</cells>
+				</hitbox>
+			</li>
+			<li>
+				<key>BackLeftWheel</key>
+				<label>Back Left Wheel</label>
+				<health>50</health>
+				<depth>External</depth>
+				
+				<armor>
+					<ArmorRating_Blunt>0</ArmorRating_Blunt>
+					<ArmorRating_Sharp>0</ArmorRating_Sharp>
+				</armor>
+				
+				<tags>
+					<li>Wheel</li>
+				</tags>
+				
+				<hitbox>
+					<fallthrough>false</fallthrough>
+					<cells>
+						<li>(0, -1)</li>
+					</cells>
+				</hitbox>
+				
+				<categories>
+					<li>MoveSpeed</li>
+				</categories>
+			</li>
+			<li>
+				<key>BackRightWheel</key>
+				<label>Back Right Wheel</label>
+				<health>50</health>
+				<depth>External</depth>
+				
+				<armor>
+					<ArmorRating_Blunt>0</ArmorRating_Blunt>
+					<ArmorRating_Sharp>0</ArmorRating_Sharp>
+				</armor>
+				
+				<tags>
+					<li>Wheel</li>
+				</tags>
+				
+				<hitbox>
+					<fallthrough>false</fallthrough>
+					<cells>
+						<li>(1, -1)</li>
+					</cells>
+				</hitbox>
+				
+				<categories>
+					<li>MoveSpeed</li>
+				</categories>
+			</li>
+			<li>
+				<key>FrontLeftSuspension</key>
+				<label>Front Left Suspension</label>
+				<health>20</health>
+				<depth>Internal</depth>
+				
+				<categories>
+					<li>MoveSpeed</li>
+				</categories>
+				
+				<hitbox>
+					<cells>
+						<li>(0, 2)</li>
+					</cells>
+				</hitbox>
+			</li>
+			<li>
+				<key>FrontRightSuspension</key>
+				<label>Front Right Suspension</label>
+				<health>20</health>
+				<depth>Internal</depth>
+				
+				<categories>
+					<li>MoveSpeed</li>
+				</categories>
+				
+				<hitbox>
+					<cells>
+						<li>(1, 2)</li>
+					</cells>
+				</hitbox>
+			</li>
+			<li>
+				<key>Gearbox</key>
+				<label>Gearbox</label>
+				<health>45</health>
+				<depth>Internal</depth>
+				
+				<categories>
+					<li>MoveSpeed</li>
+				</categories>
+				
+				<hitbox>
+					<side>Front</side>
+				</hitbox>
+			</li>
+			<li>
+				<key>LeftSidePanel</key>
+				<label>Left Side Panel</label>
+				<health>115</health>
+				<depth>External</depth>
+				
+				<armor>
+					<ArmorRating_Blunt>0.62</ArmorRating_Blunt>
+					<ArmorRating_Sharp>0.28</ArmorRating_Sharp>
+				</armor>
+				
+				<hitbox>
+					<side>Left</side>
+				</hitbox>
+			</li>
+			<li>
+				<key>RightSidePanel</key>
+				<label>Right Side Panel</label>
+				<health>115</health>
+				<depth>External</depth>
+				
+				<armor>
+					<ArmorRating_Blunt>0.62</ArmorRating_Blunt>
+					<ArmorRating_Sharp>0.28</ArmorRating_Sharp>
+				</armor>
+				
+				<hitbox>
+					<side>Right</side>
+				</hitbox>
+			</li>
+			<li>
+				<key>Chemtank</key>
+				<label>Chemtank</label>
+				<health>40</health>
+				<depth>Internal</depth>
+				
+				<hitbox>
+					<side>Back</side>
+				</hitbox>
+			</li>
+			<li>
+				<key>FrontBumper</key>
+				<label>Front Bumper</label>
+				<health>50</health>
+				<depth>External</depth>
+				
+				<hitbox>
+					<side>Front</side>
+				</hitbox>
+			</li>
+			<li>
+				<key>RearBumper</key>
+				<label>Rear Bumper</label>
+				<health>25</health>
+				<depth>External</depth>
+				
+				<hitbox>
+					<side>Back</side>
+				</hitbox>
+			</li>
+			<li>
+				<key>Upholstery</key>
+				<label>Upholstery</label>
+				<health>30</health>
+				<depth>Internal</depth>
+			</li>
+			<li>
+				<key>Dashboard</key>
+				<label>Dashboard</label>
+				<health>45</health>
+				<depth>Internal</depth>
+			</li>
+			<li>
+				<key>SteeringWheel</key>
+				<label>Steering Wheel</label>
+				<health>20</health>
+				<depth>Internal</depth>
+			</li>
+			<li>
+				<key>Alternator</key>
+				<label>Alternator</label>
+				<health>20</health>
+				<depth>Internal</depth>
+			</li>
+			<li>
+				<key>Hood</key>
+				<label>Hood</label>
+				<health>40</health>
+				<depth>External</depth>
+			</li>
+			<li>
+				<key>Roof</key>
+				<label>Roof</label>
+				<health>45</health>
+				<depth>External</depth>
+			</li>
+		</components>
+
+		<comps>
+			<li Class="Vehicles.CompProperties_FueledTravel">
+				<fuelType>WoodLog</fuelType>
+				<fuelConsumptionRate>34</fuelConsumptionRate>
+				<fuelCapacity>65</fuelCapacity>
+			</li>
+		</comps>
+	</Vehicles.VehicleDef>
+</Defs>
