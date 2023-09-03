@@ -8,7 +8,7 @@
 	<supportedVersions>
 		<li>1.4</li>
 	</supportedVersions>
-	<packageId>840.t.endeavour</packageId>
+	<packageId>840.t.woodchuck.endeavour</packageId>
 	<modDependencies>
 	</modDependencies>
 	<loadAfter>
